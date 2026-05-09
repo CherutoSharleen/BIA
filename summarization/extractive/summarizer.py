@@ -48,3 +48,13 @@ def summarize(text: str, max_sentences: int = 2) -> list[str]:
         scored.append((idx, score, sentence))
     top = sorted(scored, key=lambda row: row[1], reverse=True)[:max_sentences]
     return [row[2] for row in sorted(top, key=lambda row: row[0])]
+
+
+def sentence_scores(text: str) -> list[tuple[str, int]]:
+    sentences = split_sentences(text)
+    frequencies = Counter(tokenize(text))
+    output: list[tuple[str, int]] = []
+    for sentence in sentences:
+        score = sum(frequencies[token] for token in tokenize(sentence))
+        output.append((sentence, score))
+    return output
