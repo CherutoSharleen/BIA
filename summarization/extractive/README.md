@@ -58,7 +58,3 @@ All text examples are fictional/synthetic.
 
 - Ranking is frequency-based and can miss nuance.
 - Try adding position bias, TF-IDF weighting, or sentence-length normalization.
-
-## Disclosure
-
-This is a retrospective educational addition created now. Historical author dates may be used for commit metadata and do not indicate the actual execution date of this work.
