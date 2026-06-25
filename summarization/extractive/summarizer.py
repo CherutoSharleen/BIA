@@ -58,3 +58,10 @@ def sentence_scores(text: str) -> list[tuple[str, int]]:
         score = sum(frequencies[token] for token in tokenize(sentence))
         output.append((sentence, score))
     return output
+
+
+def top_sentence(text: str) -> tuple[str, int] | None:
+    scores = sentence_scores(text)
+    if not scores:
+        return None
+    return max(scores, key=lambda item: item[1])
