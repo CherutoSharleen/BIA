@@ -69,3 +69,7 @@ def top_sentence(text: str) -> tuple[str, int] | None:
 
 def summary_text(text: str, max_sentences: int = 2) -> str:
     return " ".join(summarize(text, max_sentences=max_sentences))
+
+
+def sentence_count(text: str) -> int:
+    return len(split_sentences(text))

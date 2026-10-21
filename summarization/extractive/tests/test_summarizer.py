@@ -1,6 +1,6 @@
 import unittest
 
-from summarizer import sentence_scores, summary_text, summarize, top_sentence
+from summarizer import sentence_count, sentence_scores, summary_text, summarize, top_sentence
 
 
 class SummarizerTests(unittest.TestCase):
@@ -32,6 +32,10 @@ class SummarizerTests(unittest.TestCase):
         text = "Search ranking teaches retrieval. Retrieval needs test data."
         result = summary_text(text, max_sentences=1)
         self.assertGreater(len(result), 0)
+
+    def test_sentence_count(self) -> None:
+        text = "One. Two? Three!"
+        self.assertEqual(sentence_count(text), 3)
 
 
 if __name__ == "__main__":
